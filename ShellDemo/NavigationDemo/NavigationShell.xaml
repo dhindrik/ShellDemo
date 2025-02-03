@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ShellDemo.NavigationDemo.NavigationShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:ShellDemo.Pages"
+    Title="NavigationShell"
+    FlyoutBackdrop="#66999999"
+    FlyoutBackgroundColor="#CCCCCC"
+    FlyoutBehavior="Flyout"
+    FlyoutIcon="hamburger.png"
+    Shell.BackgroundColor="#E03D45"
+    Shell.TitleColor="#FFFFFF">
+    <Shell.FlyoutHeader>
+        <Image Source="dotnet_bot.png" />
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate pages:LoginPage}"
+        FlyoutItemIsVisible="False"
+        Route="login"
+        Shell.FlyoutBehavior="Disabled" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Icon="home.png"
+        Route="home"
+        Shell.FlyoutBehavior="Locked" />
+    <FlyoutItem Title="Items" Icon="list.png">
+        <ShellContent
+            Title="List"
+            ContentTemplate="{DataTemplate pages:ListPage}"
+            Icon="list.png" />
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate pages:MapPage}"
+            Icon="map.png" />
+
+    </FlyoutItem>
+    <FlyoutItem
+        Title="Items"
+        FlyoutDisplayOptions="AsMultipleItems"
+        Icon="list.png"
+        Route="items">
+        <ShellContent
+            Title="List"
+            ContentTemplate="{DataTemplate pages:ListPage}"
+            Icon="list.png" />
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate pages:MapPage}"
+            Icon="map.png"
+            Route="map" />
+
+    </FlyoutItem>
+    <ShellContent
+        Title="About"
+        ContentTemplate="{DataTemplate pages:AboutPage}"
+        Icon="info.png" />
+
+    <Shell.FlyoutFooter>
+        <Button Margin="20" Text="Sign out" />
+    </Shell.FlyoutFooter>
+</Shell>

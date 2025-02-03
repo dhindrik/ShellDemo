@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ShellDemo.FlyoutDemo.FlyoutShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:ShellDemo.Pages"
+    Title="FlyoutShell"
+    FlyoutBackdrop="#66999999"
+    FlyoutBackgroundColor="#CCCCCC"
+    FlyoutIcon="hamburger.png"
+    FlyoutWidth="200"
+    Shell.BackgroundColor="#E03D45"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TitleColor="#FFFFFF">
+    <Shell.Resources>
+        <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#E03D45" />
+            <Setter Property="HeightRequest" Value="100" />
+        </Style>
+        <Style Class="FlyoutItemImageStyle" TargetType="Image">
+            <Setter Property="Aspect" Value="Fill" />
+        </Style>
+
+        <Style
+            ApplyToDerivedTypes="True"
+            Class="FlyoutItemLayoutStyle"
+            TargetType="Layout">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <Image Source="dotnet_bot.png" />
+    </Shell.FlyoutHeader>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Icon="home.png" />
+    <FlyoutItem Title="Items" Icon="list.png">
+        <ShellContent
+            Title="List"
+            ContentTemplate="{DataTemplate pages:ListPage}"
+            Icon="list.png" />
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate pages:MapPage}"
+            Icon="map.png" />
+
+    </FlyoutItem>
+    <FlyoutItem
+        Title="Items"
+        FlyoutDisplayOptions="AsMultipleItems"
+        Icon="list.png">
+        <ShellContent
+            Title="List"
+            ContentTemplate="{DataTemplate pages:ListPage}"
+            Icon="list.png" />
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate pages:MapPage}"
+            Icon="map.png" />
+
+    </FlyoutItem>
+    <ShellContent
+        Title="About"
+        ContentTemplate="{DataTemplate pages:AboutPage}"
+        Icon="info.png" />
+    <MenuItem
+        Clicked="MenuItem_Clicked"
+        IconImageSource="code.png"
+        Text="Source code" />
+    <Shell.FlyoutFooter>
+        <Button Margin="20" Text="Sign out" />
+    </Shell.FlyoutFooter>
+</Shell>

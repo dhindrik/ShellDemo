@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ShellDemo.CustomFlyoutDemo.CustomFlyoutShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:ShellDemo.Pages"
+    x:Name="shell"
+    Title="FlyoutShell"
+    FlyoutBackdrop="#66999999"
+    FlyoutBackgroundColor="#CCCCCC"
+    FlyoutBehavior="Locked"
+    FlyoutIcon="hamburger.png"
+    Shell.BackgroundColor="#E03D45"
+    Shell.TitleColor="#FFFFFF">
+    <Shell.FlyoutHeader>
+        <Image Source="dotnet_bot.png" />
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutContent>
+        <Grid RowDefinitions="100,*">
+            <ContentView Padding="10">
+                <Label Text="This is flyout content" />
+            </ContentView>
+            <CollectionView
+                Grid.Row="1"
+                BindingContext="{x:Reference shell}"
+                IsGrouped="True"
+                ItemsSource="{Binding FlyoutItems}">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="0,10">
+                            <Label Text="Group header" />
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.GroupFooterTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="10">
+                            <Label Text="Group footer" />
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.GroupFooterTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="10">
+                            <Label
+                                FontSize="18"
+                                Text="{Binding Title}"
+                                TextColor="Navy" />
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Shell.FlyoutContent>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Icon="home.png" />
+    <ShellContent
+        Title="List"
+        ContentTemplate="{DataTemplate pages:ListPage}"
+        Icon="list.png" />
+    <ShellContent
+        Title="Map"
+        ContentTemplate="{DataTemplate pages:MapPage}"
+        Icon="map.png" />
+
+    <ShellContent
+        Title="About"
+        ContentTemplate="{DataTemplate pages:AboutPage}"
+        Icon="info.png" />
+
+    <Shell.FlyoutFooter>
+        <Button Margin="20" Text="Sign out" />
+    </Shell.FlyoutFooter>
+</Shell>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ShellDemo.SearchDemo.SearchShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShellDemo.SearchDemo"
+    Title="TabShell"
+    Shell.BackgroundColor="#E03D45"
+    Shell.ForegroundColor="#FFFFFF"
+    Shell.TabBarBackgroundColor="#FFFFFF"
+    Shell.TabBarForegroundColor="#E03D45"
+    Shell.TabBarTitleColor="#E03D45"
+    Shell.TabBarUnselectedColor="#999999"
+    Shell.TitleColor="#FFFFFF">
+    <TabBar>
+        <ShellContent Title="Search">
+            <ContentPage>
+                <Shell.SearchHandler>
+                    <local:CitiesSearchHandler
+                        Placeholder="Search for Swedish cities"
+                        SearchBoxVisibility="Collapsible"
+                        ShowsResults="True">
+                        <local:CitiesSearchHandler.ItemTemplate>
+                            <DataTemplate>
+                                <ContentView Padding="10">
+                                    <Label Text="{Binding Name}" VerticalOptions="Center" />
+                                </ContentView>
+                            </DataTemplate>
+                        </local:CitiesSearchHandler.ItemTemplate>
+                    </local:CitiesSearchHandler>
+                </Shell.SearchHandler>
+            </ContentPage>
+        </ShellContent>
+        <ShellContent>
+            <ContentPage Title="About">
+                <VerticalStackLayout>
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="About page"
+                        VerticalOptions="Center" />
+                </VerticalStackLayout>
+            </ContentPage>
+        </ShellContent>
+    </TabBar>
+</Shell>

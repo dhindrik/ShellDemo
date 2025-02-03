@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ShellDemo.TabDemo.TabShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:ShellDemo.Pages"
+    Title="TabShell"
+    Shell.BackgroundColor="#E03D45"
+    Shell.ForegroundColor="#FFFFFF"
+    Shell.TabBarBackgroundColor="#FFFFFF"
+    Shell.TabBarForegroundColor="#E03D45"
+    Shell.TabBarTitleColor="#E03D45"
+    Shell.TabBarUnselectedColor="#999999"
+    Shell.TitleColor="#FFFFFF">
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:HomePage}"
+            Icon="home.png" />
+        <Tab Title="Items" Icon="list.png">
+            <ShellContent
+                Title="List"
+                ContentTemplate="{DataTemplate pages:ListPage}"
+                Icon="list.png" />
+            <ShellContent
+                Title="Map"
+                ContentTemplate="{DataTemplate pages:MapPage}"
+                Icon="map.png" />
+        </Tab>
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate pages:AboutPage}"
+            Icon="info.png" />
+    </TabBar>
+</Shell> 
