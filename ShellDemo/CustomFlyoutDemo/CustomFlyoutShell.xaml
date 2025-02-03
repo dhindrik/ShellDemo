@@ -16,43 +16,6 @@
         <Image Source="dotnet_bot.png" />
     </Shell.FlyoutHeader>
 
-    <Shell.FlyoutContent>
-        <Grid RowDefinitions="100,*">
-            <ContentView Padding="10">
-                <Label Text="This is flyout content" />
-            </ContentView>
-            <CollectionView
-                Grid.Row="1"
-                BindingContext="{x:Reference shell}"
-                IsGrouped="True"
-                ItemsSource="{Binding FlyoutItems}">
-                <CollectionView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ContentView Padding="0,10">
-                            <Label Text="Group header" />
-                        </ContentView>
-                    </DataTemplate>
-                </CollectionView.GroupHeaderTemplate>
-                <CollectionView.GroupFooterTemplate>
-                    <DataTemplate>
-                        <ContentView Padding="10">
-                            <Label Text="Group footer" />
-                        </ContentView>
-                    </DataTemplate>
-                </CollectionView.GroupFooterTemplate>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <ContentView Padding="10">
-                            <Label
-                                FontSize="18"
-                                Text="{Binding Title}"
-                                TextColor="Navy" />
-                        </ContentView>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-    </Shell.FlyoutContent>
 
     <ShellContent
         Title="Home"

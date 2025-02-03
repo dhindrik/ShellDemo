@@ -18,14 +18,12 @@
     <ShellContent
         ContentTemplate="{DataTemplate pages:LoginPage}"
         FlyoutItemIsVisible="False"
-        Route="login"
         Shell.FlyoutBehavior="Disabled" />
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate pages:HomePage}"
         Icon="home.png"
-        Route="home"
         Shell.FlyoutBehavior="Locked" />
     <FlyoutItem Title="Items" Icon="list.png">
         <ShellContent
@@ -41,8 +39,7 @@
     <FlyoutItem
         Title="Items"
         FlyoutDisplayOptions="AsMultipleItems"
-        Icon="list.png"
-        Route="items">
+        Icon="list.png">
         <ShellContent
             Title="List"
             ContentTemplate="{DataTemplate pages:ListPage}"

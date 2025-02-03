@@ -29,47 +29,4 @@
         </Style>
     </Shell.Resources>
 
-    <Shell.FlyoutHeader>
-        <Image Source="dotnet_bot.png" />
-    </Shell.FlyoutHeader>
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:HomePage}"
-        Icon="home.png" />
-    <FlyoutItem Title="Items" Icon="list.png">
-        <ShellContent
-            Title="List"
-            ContentTemplate="{DataTemplate pages:ListPage}"
-            Icon="list.png" />
-        <ShellContent
-            Title="Map"
-            ContentTemplate="{DataTemplate pages:MapPage}"
-            Icon="map.png" />
-
-    </FlyoutItem>
-    <FlyoutItem
-        Title="Items"
-        FlyoutDisplayOptions="AsMultipleItems"
-        Icon="list.png">
-        <ShellContent
-            Title="List"
-            ContentTemplate="{DataTemplate pages:ListPage}"
-            Icon="list.png" />
-        <ShellContent
-            Title="Map"
-            ContentTemplate="{DataTemplate pages:MapPage}"
-            Icon="map.png" />
-
-    </FlyoutItem>
-    <ShellContent
-        Title="About"
-        ContentTemplate="{DataTemplate pages:AboutPage}"
-        Icon="info.png" />
-    <MenuItem
-        Clicked="MenuItem_Clicked"
-        IconImageSource="code.png"
-        Text="Source code" />
-    <Shell.FlyoutFooter>
-        <Button Margin="20" Text="Sign out" />
-    </Shell.FlyoutFooter>
 </Shell>
