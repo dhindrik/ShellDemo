@@ -11,5 +11,10 @@
         {
             return new Window(new MainPage());
         }
+
+        public static void ShowMain()
+        {
+            App.Current.Windows[0].Page = new MainPage();
+        }
     }
 }

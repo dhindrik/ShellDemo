@@ -28,4 +28,9 @@ public partial class HomePage : ContentPage
 
         //_ = Shell.Current.GoToAsync($"details", parameters);
     }
+
+    private void Main_Clicked(object sender, EventArgs e)
+    {
+        App.ShowMain();
+    }
 }

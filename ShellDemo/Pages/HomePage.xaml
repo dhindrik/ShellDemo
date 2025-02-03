@@ -17,5 +17,6 @@
 
         <Entry x:Name="NameEntry" />
         <Button Clicked="Button_Clicked" Text="Show" />
+        <Button Clicked="Main_Clicked" Text="Back to main page" />
     </VerticalStackLayout>
 </ContentPage>
